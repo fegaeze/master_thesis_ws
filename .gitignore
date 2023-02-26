@@ -9,3 +9,6 @@ install/
 
 # VS code folder (force add if needed)
 .vscode/
+
+# Others
+**/.DS_Store
