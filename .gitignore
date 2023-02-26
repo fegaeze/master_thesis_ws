@@ -1,0 +1,11 @@
+# Build folders and other catkin stuff
+build/
+devel/
+log/
+logs/
+install/
+.catkin_workspace
+.catkin_tools/
+
+# VS code folder (force add if needed)
+.vscode/
