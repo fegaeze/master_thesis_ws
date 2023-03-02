@@ -218,8 +218,7 @@ int main(int argc, char **argv)
 
     ros::NodeHandle n;
     ros::Publisher lowState_pub; //for rviz visualization
-    // ros::Rate loop_rate(1000);
-    // the following nodes have been initialized by "gazebo.launch"
+
     lowState_pub = n.advertise<unitree_legged_msgs::LowState>("/" + robot_name + "/lowState/state", 1);
     servo_pub[0] = n.advertise<unitree_legged_msgs::MotorCmd>("/" + robot_name + "/FR_hip_controller/command", 1);
     servo_pub[1] = n.advertise<unitree_legged_msgs::MotorCmd>("/" + robot_name + "/FR_thigh_controller/command", 1);
@@ -240,6 +239,10 @@ int main(int argc, char **argv)
         /*
         control logic
         */
+        lowCmd.motorCmd[0].q = 0.0;
+        lowCmd.motorCmd[1].q = 0.0;
+        lowCmd.motorCmd[2].q = -1.853;
+
         lowState_pub.publish(lowState);
         sendServoCmd();
 
