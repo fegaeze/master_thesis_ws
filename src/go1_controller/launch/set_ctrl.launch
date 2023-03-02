@@ -1,0 +1,7 @@
+<launch>
+    <arg name="rname" default="go1"/>
+    <param name="robot_name" value="$(arg rname)"/>
+
+    <node pkg="go1_controller" type="go1_servo" name="go1_servo" respawn="true"/>
+
+</launch>
